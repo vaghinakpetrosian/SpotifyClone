@@ -26,7 +26,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     QHBoxLayout *topLayout = new QHBoxLayout(topBar);
 
     usernameInput = new QLineEdit();
-    usernameInput->setPlaceholderText("Enter username...");
+    usernameInput->setPlaceholderText("Enter username");
     usernameInput->setFixedWidth(150);
     usernameInput->setStyleSheet("background-color: white; color: black; border-radius: 3px; padding: 5px;");
 
@@ -186,11 +186,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent) {
     btnPlayPause = new QPushButton();
     btnNext = new QPushButton();
     btnRepeat = new QPushButton();
-    btnShuffle->setIcon(QIcon("/home/hnin/SpotifyClone/icons/shuffle.png"));
-    btnPrev->setIcon(QIcon("/home/hnin/SpotifyClone/icons/prev.png"));
-    btnPlayPause->setIcon(QIcon("/home/hnin/SpotifyClone/icons/play.png"));
-    btnNext->setIcon(QIcon("/home/hnin/SpotifyClone/icons/next.png"));
-    btnRepeat->setIcon(QIcon("/home/hnin/SpotifyClone/icons/repeat.png"));
+    btnShuffle->setIcon(QIcon(":/SpotifyClone/icons/shuffle.png"));
+    btnPrev->setIcon(QIcon(":/SpotifyClone/icons/prev.png"));
+    btnPlayPause->setIcon(QIcon(":/SpotifyClone/icons/play.png"));
+    btnNext->setIcon(QIcon(":/SpotifyClone/icons/next.png"));
+    btnRepeat->setIcon(QIcon(":/SpotifyClone/icons/repeat.png"));
 
     int iconSize = 24;
     btnShuffle->setIconSize(QSize(iconSize, iconSize));
@@ -480,11 +480,11 @@ void MainWindow::togglePlayPause() {
 
 void MainWindow::onPlayerStateChanged(QMediaPlayer::PlaybackState state) {
     if (state == QMediaPlayer::PlayingState) {
-        btnPlayPause->setIcon(QIcon("/home/hnin/SpotifyClone/icons/pause.png"));
+        btnPlayPause->setIcon(QIcon(":/SpotifyClone/icons/pause.png"));
         btnPlayPause->setStyleSheet("QPushButton { background-color: black; border: none; border-radius: 20px; } "
                                     "QPushButton:hover { background-color: #282828; }");
     } else {
-        btnPlayPause->setIcon(QIcon("/home/hnin/SpotifyClone/icons/play.png"));
+        btnPlayPause->setIcon(QIcon(":/SpotifyClone/icons/play.png"));
         btnPlayPause->setStyleSheet("QPushButton { background-color: black; border: none; border-radius: 20px; } "
                                     "QPushButton:hover { background-color: #282828; }");
     }
@@ -505,16 +505,16 @@ void MainWindow::toggleRepeat() {
     repeatState = (repeatState + 1) % 3;
 
     if (repeatState == 0) {
-        btnRepeat->setIcon(QIcon("/home/hnin/SpotifyClone/icons/repeat.png"));
+        btnRepeat->setIcon(QIcon(":/SpotifyClone/icons/repeat.png"));
         btnRepeat->setStyleSheet("QPushButton { background-color: black; border: none; padding: 5px; border-radius: 5px; } "
                                  "QPushButton:hover { background-color: #282828; }");
     }
     else if (repeatState == 1) {
-        btnRepeat->setIcon(QIcon("/home/hnin/SpotifyClone/icons/repeat.png"));
+        btnRepeat->setIcon(QIcon(":/SpotifyClone/icons/repeat.png"));
         btnRepeat->setStyleSheet("QPushButton { background-color: black; border: 1px solid white; padding: 4px; border-radius: 5px; }");
     }
     else if (repeatState == 2) {
-        btnRepeat->setIcon(QIcon("/home/hnin/SpotifyClone/icons/repeat_one.png"));
+        btnRepeat->setIcon(QIcon(":/SpotifyClone/icons/repeat_one.png"));
         btnRepeat->setStyleSheet("QPushButton { background-color: black; border: 1px solid white; padding: 4px; border-radius: 5px; }");
     }
 }
@@ -529,7 +529,7 @@ void MainWindow::playNext() {
     if (isShuffle) {
         nextRow = QRandomGenerator::global()->bounded(list->count());
     } else {
-        nextRow = (currentRow + 1) % list->count(); // Safely loops to 0 if at the end
+        nextRow = (currentRow + 1) % list->count();
     }
 
     list->setCurrentRow(nextRow);
