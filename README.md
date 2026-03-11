@@ -1,4 +1,4 @@
-# Full-Stack Spotify Clone
+# In Progress Full-Stack Spotify Clone
 
 A high-performance desktop media player built with a **C++/Qt** frontend, a **Python/FastAPI** REST backend, and a **PostgreSQL** relational database.
 
