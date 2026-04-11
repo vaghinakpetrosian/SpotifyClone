@@ -98,7 +98,6 @@ for artist, info in new_artists_data.items():
                 "duration": random.randint(180, 280) 
             })
 
-# Overwrite the JSON file with this new batch
 with open("data.json", "w") as f:
     json.dump(songs_list, f, indent=4)
 
