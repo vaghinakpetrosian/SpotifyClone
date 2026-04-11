@@ -42,7 +42,7 @@ def search(query: str):
     cursor = conn.cursor(cursor_factory=RealDictCursor)
     search_pattern = f"%{query}%"
     cursor.execute("""
-        SELECT t.id, t.title, a.name AS artist, a.genre, t.file_url, al.cover_url 
+        SELECT t.id, t.title, a.name AS artist, a.genre, t.file_url, al.cover_url, t.duration, t.lyrics
         FROM tracks t
         JOIN albums al ON t.album_id = al.id
         JOIN artists a ON al.artist_id = a.id
@@ -58,7 +58,7 @@ def get_all_tracks():
     conn = get_db()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
     cursor.execute("""
-        SELECT t.id, t.title, a.name AS artist, a.genre, t.file_url, al.cover_url 
+        SELECT t.id, t.title, a.name AS artist, a.genre, t.file_url, al.cover_url, t.duration, t.lyrics
         FROM tracks t
         JOIN albums al ON t.album_id = al.id
         JOIN artists a ON al.artist_id = a.id
@@ -116,7 +116,7 @@ def get_liked_songs(user_id: int):
     conn = get_db()
     cursor = conn.cursor(cursor_factory=RealDictCursor)
     cursor.execute("""
-        SELECT t.id, t.title, a.name AS artist, a.genre, t.file_url, al.cover_url 
+        SELECT t.id, t.title, a.name AS artist, a.genre, t.file_url, al.cover_url, t.duration, t.lyrics
         FROM tracks t 
         JOIN albums al ON t.album_id = al.id
         JOIN artists a ON al.artist_id = a.id
@@ -167,31 +167,53 @@ def recommend_for_user(user_id: int):
     cursor = conn.cursor(cursor_factory=RealDictCursor)
     cursor.execute("""
         WITH UserGenres AS (
+            -- 1. Gather genres from artists the user follows
             SELECT a.genre FROM artists a 
             JOIN user_followed_artists ufa ON a.id = ufa.artist_id 
             WHERE ufa.user_id = %(uid)s
             UNION ALL
+            -- 2. Gather genres from tracks the user has liked
             SELECT a.genre FROM artists a 
-            JOIN albums al ON a.id = al.artist_id 
-            JOIN tracks t ON al.id = t.album_id 
+            JOIN tracks t ON a.id = t.artist_id 
             JOIN user_likes ul ON t.id = ul.track_id 
             WHERE ul.user_id = %(uid)s
         ),
         RankedGenres AS (
+            -- 3. Weigh how much the user likes each genre
             SELECT genre, COUNT(*) as weight 
             FROM UserGenres GROUP BY genre
         )
-        SELECT t.id, t.title, a.name AS artist, a.genre, t.file_url, al.cover_url,
-               COALESCE(rg.weight, 0) + CASE WHEN ufa.artist_id IS NOT NULL THEN 100 ELSE 0 END as score
+        SELECT t.id, t.title, a.name AS artist, a.genre, t.file_url, al.cover_url, t.duration, t.lyrics,
+               
+               -- THE AI SCORING ALGORITHM:
+               -- Base preference: 10 points for every interaction they've had with this genre
+               (COALESCE(rg.weight, 0) * 10) 
+               
+               -- Direct follow: Massive 100 point boost if they already follow the artist
+               + CASE WHEN ufa.artist_id IS NOT NULL THEN 100 ELSE 0 END 
+               
+               -- Crowd Favorite: Small boost for globally popular tracks (e.g., 50 plays = 5 extra points)
+               + (COALESCE(t.play_count, 0) * 0.1) 
+               
+               -- Serendipity: Randomly add between 0 and 15 points to shake up the list
+               + (RANDOM() * 15) 
+               
+               AS score
+
         FROM tracks t
         JOIN albums al ON t.album_id = al.id
-        JOIN artists a ON al.artist_id = a.id
+        JOIN artists a ON t.artist_id = a.id
         LEFT JOIN RankedGenres rg ON a.genre = rg.genre
         LEFT JOIN user_followed_artists ufa ON a.id = ufa.artist_id AND ufa.user_id = %(uid)s
+        
+        -- Filter out songs they already liked
         WHERE t.id NOT IN (SELECT track_id FROM user_likes WHERE user_id = %(uid)s)
+        
+        -- Order by the highest calculated score
         ORDER BY score DESC
         LIMIT 20
     """, {'uid': user_id})
+    
     recommendations = cursor.fetchall()
     conn.close()
     return {"recommendations": recommendations}
@@ -209,3 +231,19 @@ def get_followed_artists(user_id: int):
     artists = cursor.fetchall()
     conn.close()
     return {"artists": artists}
+
+@app.get("/artist/{artist_id}/tracks")
+def get_artist_tracks(artist_id: int):
+    conn = get_db()
+    cursor = conn.cursor(cursor_factory=RealDictCursor)
+    cursor.execute("""
+        SELECT t.id, t.title, a.name AS artist, a.genre, t.file_url, al.cover_url, t.duration, t.lyrics
+        FROM tracks t
+        JOIN artists a ON t.artist_id = a.id
+        JOIN albums al ON t.album_id = al.id
+        WHERE a.id = %(aid)s
+    """, {'aid': artist_id})
+    
+    tracks = cursor.fetchall()
+    conn.close()
+    return {"tracks": tracks}
