@@ -1,0 +1,382 @@
+[
+    {
+        "track_title": "Fortnight (feat Post Malone)",
+        "artist_name": "Taylor Swift",
+        "genre": "Pop",
+        "album_title": "The Tortured Poets Department",
+        "artist_image": "media/artists_image/taylor_swift.jpg",
+        "cover_url": "media/cover/the_tortured_poets_department.jpg",
+        "file_url": "media/songs/fortnight_feat_post_malone.mp3",
+        "duration": 225
+    },
+    {
+        "track_title": "Exile (feat Bon Iver)",
+        "artist_name": "Taylor Swift",
+        "genre": "Pop",
+        "album_title": "Folklore",
+        "artist_image": "media/artists_image/taylor_swift.jpg",
+        "cover_url": "media/cover/folklore.jpg",
+        "file_url": "media/songs/exile_feat_bon_iver.mp3",
+        "duration": 276
+    },
+    {
+        "track_title": "Cardigan",
+        "artist_name": "Taylor Swift",
+        "genre": "Pop",
+        "album_title": "Folklore",
+        "artist_image": "media/artists_image/taylor_swift.jpg",
+        "cover_url": "media/cover/folklore.jpg",
+        "file_url": "media/songs/cardigan.mp3",
+        "duration": 252
+    },
+    {
+        "track_title": "Blank Space",
+        "artist_name": "Taylor Swift",
+        "genre": "Pop",
+        "album_title": "1989",
+        "artist_image": "media/artists_image/taylor_swift.jpg",
+        "cover_url": "media/cover/1989.jpg",
+        "file_url": "media/songs/blank_space.mp3",
+        "duration": 241
+    },
+    {
+        "track_title": "Bad Blood (feat Kendrick Lamar)",
+        "artist_name": "Taylor Swift",
+        "genre": "Pop",
+        "album_title": "1989",
+        "artist_image": "media/artists_image/taylor_swift.jpg",
+        "cover_url": "media/cover/1989.jpg",
+        "file_url": "media/songs/bad_blood_feat_kendrick_lamar.mp3",
+        "duration": 194
+    },
+    {
+        "track_title": "HUMBLE",
+        "artist_name": "Kendrick Lamar",
+        "genre": "Hip Hop",
+        "album_title": "DAMN",
+        "artist_image": "media/artists_image/kendrick_lamar.jpg",
+        "cover_url": "media/cover/damn.jpg",
+        "file_url": "media/songs/humble.mp3",
+        "duration": 254
+    },
+    {
+        "track_title": "DNA",
+        "artist_name": "Kendrick Lamar",
+        "genre": "Hip Hop",
+        "album_title": "DAMN",
+        "artist_image": "media/artists_image/kendrick_lamar.jpg",
+        "cover_url": "media/cover/damn.jpg",
+        "file_url": "media/songs/dna.mp3",
+        "duration": 198
+    },
+    {
+        "track_title": "LOYALTY (feat Rihanna)",
+        "artist_name": "Kendrick Lamar",
+        "genre": "Hip Hop",
+        "album_title": "DAMN",
+        "artist_image": "media/artists_image/kendrick_lamar.jpg",
+        "cover_url": "media/cover/damn.jpg",
+        "file_url": "media/songs/loyalty_feat_rihanna.mp3",
+        "duration": 230
+    },
+    {
+        "track_title": "All The Stars (with SZA)",
+        "artist_name": "Kendrick Lamar",
+        "genre": "Hip Hop",
+        "album_title": "Black Panther",
+        "artist_image": "media/artists_image/kendrick_lamar.jpg",
+        "cover_url": "media/cover/black_panther.jpg",
+        "file_url": "media/songs/all_the_stars_with_sza.mp3",
+        "duration": 218
+    },
+    {
+        "track_title": "Lust for Life (feat The Weeknd)",
+        "artist_name": "Lana Del Rey",
+        "genre": "Alternative",
+        "album_title": "Lust for Life",
+        "artist_image": "media/artists_image/lana_del_rey.jpg",
+        "cover_url": "media/cover/lust_for_life.jpg",
+        "file_url": "media/songs/lust_for_life_feat_the_weeknd.mp3",
+        "duration": 268
+    },
+    {
+        "track_title": "Cherry",
+        "artist_name": "Lana Del Rey",
+        "genre": "Alternative",
+        "album_title": "Lust for Life",
+        "artist_image": "media/artists_image/lana_del_rey.jpg",
+        "cover_url": "media/cover/lust_for_life.jpg",
+        "file_url": "media/songs/cherry.mp3",
+        "duration": 232
+    },
+    {
+        "track_title": "Summertime Sadness",
+        "artist_name": "Lana Del Rey",
+        "genre": "Alternative",
+        "album_title": "Born to Die",
+        "artist_image": "media/artists_image/lana_del_rey.jpg",
+        "cover_url": "media/cover/born_to_die.jpg",
+        "file_url": "media/songs/summertime_sadness.mp3",
+        "duration": 241
+    },
+    {
+        "track_title": "Video Games",
+        "artist_name": "Lana Del Rey",
+        "genre": "Alternative",
+        "album_title": "Born to Die",
+        "artist_image": "media/artists_image/lana_del_rey.jpg",
+        "cover_url": "media/cover/born_to_die.jpg",
+        "file_url": "media/songs/video_games.mp3",
+        "duration": 242
+    },
+    {
+        "track_title": "Yamakasi",
+        "artist_name": "Miyagi and Andy Panda",
+        "genre": "Hip Hop",
+        "album_title": "Yamakasi",
+        "artist_image": "media/artists_image/miyagi_and_andy_panda.jpg",
+        "cover_url": "media/cover/yamakasi.jpg",
+        "file_url": "media/songs/yamakasi.mp3",
+        "duration": 197
+    },
+    {
+        "track_title": "Minor",
+        "artist_name": "Miyagi and Andy Panda",
+        "genre": "Hip Hop",
+        "album_title": "Yamakasi",
+        "artist_image": "media/artists_image/miyagi_and_andy_panda.jpg",
+        "cover_url": "media/cover/yamakasi.jpg",
+        "file_url": "media/songs/minor.mp3",
+        "duration": 200
+    },
+    {
+        "track_title": "Captain",
+        "artist_name": "Miyagi and Andy Panda",
+        "genre": "Hip Hop",
+        "album_title": "Yamakasi",
+        "artist_image": "media/artists_image/miyagi_and_andy_panda.jpg",
+        "cover_url": "media/cover/yamakasi.jpg",
+        "file_url": "media/songs/captain.mp3",
+        "duration": 238
+    },
+    {
+        "track_title": "I Got Love (feat Rem Digga)",
+        "artist_name": "Miyagi and Andy Panda",
+        "genre": "Hip Hop",
+        "album_title": "Hajime",
+        "artist_image": "media/artists_image/miyagi_and_andy_panda.jpg",
+        "cover_url": "media/cover/hajime.jpg",
+        "file_url": "media/songs/i_got_love_feat_rem_digga.mp3",
+        "duration": 197
+    },
+    {
+        "track_title": "Wind of Change",
+        "artist_name": "Scorpions",
+        "genre": "Classic Rock",
+        "album_title": "Crazy World",
+        "artist_image": "media/artists_image/scorpions.jpg",
+        "cover_url": "media/cover/crazy_world.jpg",
+        "file_url": "media/songs/wind_of_change.mp3",
+        "duration": 182
+    },
+    {
+        "track_title": "Send Me an Angel",
+        "artist_name": "Scorpions",
+        "genre": "Classic Rock",
+        "album_title": "Crazy World",
+        "artist_image": "media/artists_image/scorpions.jpg",
+        "cover_url": "media/cover/crazy_world.jpg",
+        "file_url": "media/songs/send_me_an_angel.mp3",
+        "duration": 251
+    },
+    {
+        "track_title": "Rock You Like a Hurricane",
+        "artist_name": "Scorpions",
+        "genre": "Classic Rock",
+        "album_title": "Love at First Sting",
+        "artist_image": "media/artists_image/scorpions.jpg",
+        "cover_url": "media/cover/love_at_first_sting.jpg",
+        "file_url": "media/songs/rock_you_like_a_hurricane.mp3",
+        "duration": 234
+    },
+    {
+        "track_title": "Still Loving You",
+        "artist_name": "Scorpions",
+        "genre": "Classic Rock",
+        "album_title": "Love at First Sting",
+        "artist_image": "media/artists_image/scorpions.jpg",
+        "cover_url": "media/cover/love_at_first_sting.jpg",
+        "file_url": "media/songs/still_loving_you.mp3",
+        "duration": 256
+    },
+    {
+        "track_title": "Circles",
+        "artist_name": "Post Malone",
+        "genre": "Pop Rap",
+        "album_title": "Hollywoods Bleeding",
+        "artist_image": "media/artists_image/post_malone.jpg",
+        "cover_url": "media/cover/hollywoods_bleeding.jpg",
+        "file_url": "media/songs/circles.mp3",
+        "duration": 192
+    },
+    {
+        "track_title": "Sunflower (with Swae Lee)",
+        "artist_name": "Post Malone",
+        "genre": "Pop Rap",
+        "album_title": "Hollywoods Bleeding",
+        "artist_image": "media/artists_image/post_malone.jpg",
+        "cover_url": "media/cover/hollywoods_bleeding.jpg",
+        "file_url": "media/songs/sunflower_with_swae_lee.mp3",
+        "duration": 233
+    },
+    {
+        "track_title": "Take What You Want (feat Ozzy Osbourne)",
+        "artist_name": "Post Malone",
+        "genre": "Pop Rap",
+        "album_title": "Hollywoods Bleeding",
+        "artist_image": "media/artists_image/post_malone.jpg",
+        "cover_url": "media/cover/hollywoods_bleeding.jpg",
+        "file_url": "media/songs/take_what_you_want_feat_ozzy_osbourne.mp3",
+        "duration": 266
+    },
+    {
+        "track_title": "Rockstar (feat 21 Savage)",
+        "artist_name": "Post Malone",
+        "genre": "Pop Rap",
+        "album_title": "Beerbongs and Bentleys",
+        "artist_image": "media/artists_image/post_malone.jpg",
+        "cover_url": "media/cover/beerbongs_and_bentleys.jpg",
+        "file_url": "media/songs/rockstar_feat_21_savage.mp3",
+        "duration": 279
+    },
+    {
+        "track_title": "Medina",
+        "artist_name": "Jah Khalib",
+        "genre": "Hip Hop",
+        "album_title": "EGO",
+        "artist_image": "media/artists_image/jah_khalib.jpg",
+        "cover_url": "media/cover/ego.jpg",
+        "file_url": "media/songs/medina.mp3",
+        "duration": 232
+    },
+    {
+        "track_title": "Leila",
+        "artist_name": "Jah Khalib",
+        "genre": "Hip Hop",
+        "album_title": "If Thaaat",
+        "artist_image": "media/artists_image/jah_khalib.jpg",
+        "cover_url": "media/cover/if_thaaat.jpg",
+        "file_url": "media/songs/leila.mp3",
+        "duration": 224
+    },
+    {
+        "track_title": "Docha",
+        "artist_name": "Jah Khalib",
+        "genre": "Hip Hop",
+        "album_title": "If Thaaat",
+        "artist_image": "media/artists_image/jah_khalib.jpg",
+        "cover_url": "media/cover/if_thaaat.jpg",
+        "file_url": "media/songs/docha.mp3",
+        "duration": 190
+    },
+    {
+        "track_title": "Summer of 69",
+        "artist_name": "Bryan Adams",
+        "genre": "Rock",
+        "album_title": "Reckless",
+        "artist_image": "media/artists_image/bryan_adams.jpg",
+        "cover_url": "media/cover/reckless.jpg",
+        "file_url": "media/songs/summer_of_69.mp3",
+        "duration": 214
+    },
+    {
+        "track_title": "Its Only Love (with Tina Turner)",
+        "artist_name": "Bryan Adams",
+        "genre": "Rock",
+        "album_title": "Reckless",
+        "artist_image": "media/artists_image/bryan_adams.jpg",
+        "cover_url": "media/cover/reckless.jpg",
+        "file_url": "media/songs/its_only_love_with_tina_turner.mp3",
+        "duration": 276
+    },
+    {
+        "track_title": "Everything I Do",
+        "artist_name": "Bryan Adams",
+        "genre": "Rock",
+        "album_title": "Waking Up the Neighbours",
+        "artist_image": "media/artists_image/bryan_adams.jpg",
+        "cover_url": "media/cover/waking_up_the_neighbours.jpg",
+        "file_url": "media/songs/everything_i_do.mp3",
+        "duration": 191
+    },
+    {
+        "track_title": "Youngblood",
+        "artist_name": "5 Seconds of Summer",
+        "genre": "Pop Rock",
+        "album_title": "Youngblood",
+        "artist_image": "media/artists_image/five__seconds_of_summer.jpg",
+        "cover_url": "media/cover/youngblood.jpg",
+        "file_url": "media/songs/youngblood.mp3",
+        "duration": 194
+    },
+    {
+        "track_title": "Ghost of You",
+        "artist_name": "5 Seconds of Summer",
+        "genre": "Pop Rock",
+        "album_title": "Youngblood",
+        "artist_image": "media/artists_image/five__seconds_of_summer.jpg",
+        "cover_url": "media/cover/youngblood.jpg",
+        "file_url": "media/songs/ghost_of_you.mp3",
+        "duration": 273
+    },
+    {
+        "track_title": "Who Do You Love (with The Chainsmokers)",
+        "artist_name": "5 Seconds of Summer",
+        "genre": "Pop Rock",
+        "album_title": "World War Joy",
+        "artist_image": "media/artists_image/five__seconds_of_summer.jpg",
+        "cover_url": "media/cover/world_war_joy.jpg",
+        "file_url": "media/songs/who_do_you_love_with_the_chainsmokers.mp3",
+        "duration": 219
+    },
+    {
+        "track_title": "Walk This Way",
+        "artist_name": "Aerosmith",
+        "genre": "Rock",
+        "album_title": "Toys in the Attic",
+        "artist_image": "media/artists_image/aerosmith.jpg",
+        "cover_url": "media/cover/toys_in_the_attic.jpg",
+        "file_url": "media/songs/walk_this_way.mp3",
+        "duration": 216
+    },
+    {
+        "track_title": "Sweet Emotion",
+        "artist_name": "Aerosmith",
+        "genre": "Rock",
+        "album_title": "Toys in the Attic",
+        "artist_image": "media/artists_image/aerosmith.jpg",
+        "cover_url": "media/cover/toys_in_the_attic.jpg",
+        "file_url": "media/songs/sweet_emotion.mp3",
+        "duration": 189
+    },
+    {
+        "track_title": "Walk This Way (with Run DMC)",
+        "artist_name": "Aerosmith",
+        "genre": "Rock",
+        "album_title": "Raising Hell",
+        "artist_image": "media/artists_image/aerosmith.jpg",
+        "cover_url": "media/cover/raising_hell.jpg",
+        "file_url": "media/songs/walk_this_way_with_run_dmc.mp3",
+        "duration": 276
+    },
+    {
+        "track_title": "I Dont Want to Miss a Thing",
+        "artist_name": "Aerosmith",
+        "genre": "Rock",
+        "album_title": "Armageddon",
+        "artist_image": "media/artists_image/aerosmith.jpg",
+        "cover_url": "media/cover/armageddon.jpg",
+        "file_url": "media/songs/i_dont_want_to_miss_a_thing.mp3",
+        "duration": 206
+    }
+]
