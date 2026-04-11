@@ -1,5 +1,6 @@
 #include "apimanager.h"
 #include <QNetworkRequest>
+#include <QNetworkReply>
 #include <QUrl>
 #include <QJsonDocument>
 #include <QJsonObject>
@@ -45,6 +46,7 @@ void ApiManager::fetchRecommendations(int userId) {
     QUrl url(BASE_URL + "/recommend/" + QString::number(userId));
     QNetworkRequest request(url);
     QNetworkReply *reply = networkManager->get(request);
+
     connect(reply, &QNetworkReply::finished, [this, reply]() {
         if (reply->error() == QNetworkReply::NoError) {
             QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
@@ -58,6 +60,7 @@ void ApiManager::fetchLikedSongs(int userId) {
     QUrl url(BASE_URL + "/liked_songs/" + QString::number(userId));
     QNetworkRequest request(url);
     QNetworkReply *reply = networkManager->get(request);
+
     connect(reply, &QNetworkReply::finished, [this, reply]() {
         if (reply->error() == QNetworkReply::NoError) {
             QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
@@ -71,6 +74,7 @@ void ApiManager::fetchArtists(int userId) {
     QUrl url(BASE_URL + "/suggest_artists/" + QString::number(userId));
     QNetworkRequest request(url);
     QNetworkReply *reply = networkManager->get(request);
+
     connect(reply, &QNetworkReply::finished, [this, reply]() {
         if (reply->error() == QNetworkReply::NoError) {
             QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
@@ -84,6 +88,7 @@ void ApiManager::fetchFollowedArtists(int userId) {
     QUrl url(BASE_URL + "/followed_artists/" + QString::number(userId));
     QNetworkRequest request(url);
     QNetworkReply *reply = networkManager->get(request);
+
     connect(reply, &QNetworkReply::finished, [this, reply]() {
         if (reply->error() == QNetworkReply::NoError) {
             QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
@@ -105,4 +110,18 @@ void ApiManager::sendFollow(int userId, int artistId) {
     QNetworkRequest request(url);
     QNetworkReply *reply = networkManager->post(request, QByteArray());
     connect(reply, &QNetworkReply::finished, [reply]() { reply->deleteLater(); });
+}
+
+void ApiManager::fetchArtistTracks(int artistId) {
+    QUrl url(BASE_URL + "/artist/" + QString::number(artistId) + "/tracks");
+    QNetworkRequest request(url);
+    QNetworkReply *reply = networkManager->get(request);
+
+    connect(reply, &QNetworkReply::finished, this, [this, reply]() {
+        if (reply->error() == QNetworkReply::NoError) {
+            QJsonDocument doc = QJsonDocument::fromJson(reply->readAll());
+            emit artistTracksReady(doc.object()["tracks"].toArray());
+        }
+        reply->deleteLater();
+    });
 }
