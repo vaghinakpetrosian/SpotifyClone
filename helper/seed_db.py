@@ -5,7 +5,7 @@ def get_db_connection():
     return psycopg2.connect(
         dbname="spotify_db", 
         user="postgres", 
-        password="password", 
+        password="password", #!!!!!!!!!!!!
         host="localhost"
     )
 
