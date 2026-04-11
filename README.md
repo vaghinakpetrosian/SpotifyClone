@@ -1,36 +1,36 @@
-# In Progress Full-Stack Spotify Clone
+# Spotify Clone (Desktop Edition) 
 
-A high-performance desktop media player built with a **C++/Qt** frontend, a **Python/FastAPI** REST backend, and a **PostgreSQL** relational database.
+A high-performance music streaming desktop application built with **C++ 17** and **Qt**, featuring a **FastAPI** backend and **PostgreSQL** database. This project replicates the core Spotify experience, including real-time synchronized lyrics, user authentication, and personalized recommendations.
 
----
+## Features
 
-## Overview
-This project is a 3-tier desktop application designed to replicate the core user experience of Spotify. It features a responsive UI, asynchronous data fetching, and a robust backend architecture to manage user libraries and track metadata.
+* **Full Window "Now Playing" Experience:** Seamlessly transitions to a distraction-free view with dynamic background coloring based on album art.
+* **Synchronized Interactive Lyrics:** Real-time lyric highlighting that follows the music. Click any lyric line to jump to that specific part of the song.
+* **Dynamic UI:** Fully responsive interface that matches window sizing, preventing horizontal scrolling and maintaining layout integrity.
+* **Personalization:** User "Like" system for tracks and "Follow" system for artists.
+* **Recommendation System:** Backend integration for "My Vibe" suggestions.
+* **Advanced Audio Controls:** Support for shuffle, repeat-one, and custom N-track sequence looping.
 
-## Tech Stack
-* **Frontend:** C++20, Qt 6 (Widgets, Network, Multimedia)
-* **Backend:** Python 3.10+, FastAPI, SQLAlchemy (ORM)
-* **Database:** PostgreSQL 15+
-* **Styling:** Custom Qt Style Sheets (QSS) for a modern Dark Mode aesthetic
+## 🛠️ Tech Stack
 
-## Key Features
-* **Dynamic Media Playback:** Integrated `QMediaPlayer` for seamless audio streaming with custom shuffle and loop algorithms.
-* **Asynchronous API Integration:** Uses `QNetworkAccessManager` to fetch data from the FastAPI backend without freezing the UI thread.
-* **Relational Data Management:** PostgreSQL database stores user profiles, liked songs, and artist relationships.
-* **Real-time Search:** Optimized SQL queries for fast metadata retrieval and filtering.
-* **Modern UI:** Responsive layouts with custom-styled buttons, sliders, and album art rendering.
+**Frontend:**
+* **C++ 17:** Core application logic and memory management.
+* **Qt Framework:** Cross-platform UI development and signal/slot architecture.
 
-## System Architecture
-The application follows a standard Client-Server architecture:
-1.  **Client (C++/Qt):** Handles user input, audio output, and UI state management.
-2.  **API (FastAPI):** Acts as the bridge, providing RESTful endpoints for the frontend to consume.
-3.  **Database (PostgreSQL):** Persistent storage for all relational data and user libraries.
+**Backend:**
+* **Python / FastAPI:** High-performance REST API for data retrieval.
+* **PostgreSQL:** Relational database for managing users, artists, albums, and tracks.
+
+**Tooling:**
+* **Git/GitHub:** Version control and collaboration.
+* **Linux/Ubuntu:** Primary development and deployment environment.
 
 ## Project Structure
+
 ```text
-├── src/                # C++ Source files (.cpp, .h)
-├── ui/                 # Qt Designer files (.ui) and Resources (.qrc)
-├── backend/            # FastAPI server and Python scripts
-├── database/           # SQL schema and migration scripts
-├── screenshots/        # Application UI previews
-└── README.md
+├── src/                # C++ Source files (.cpp)
+├── include/            # C++ Header files (.h)
+├── backend/            # FastAPI Python scripts
+├── database/           # SQL schema and migration files
+├── icons/              # UI Assets and media
+└── main.cpp            # Entry point
