@@ -14,9 +14,13 @@
 #include <QNetworkReply>
 #include <QPainter>
 #include <QPainterPath>
+#include <QEvent>
+#include <QPointer>
+#include <QSet>
 #include "apimanager.h"
 
-class MainWindow : public QMainWindow {
+class MainWindow : public QMainWindow
+{
     Q_OBJECT
 public:
     MainWindow(QWidget *parent = nullptr);
@@ -27,13 +31,16 @@ private slots:
     void updateArtistList(const QJsonArray &artists);
     void updateFollowedArtistList(const QJsonArray &artists);
     void updateSearchList(const QJsonArray &tracks);
+    void updateArtistTracksList(const QJsonArray &tracks);
     void playTrack(QListWidgetItem *item);
     void onLikeClicked();
+    void toggleLikePlayingTrack();
     void onFollowClicked();
     void onUnfollowClicked();
     void onLoginClicked();
     void onUserLoggedIn(int userId, const QString &username);
     void onSearchClicked();
+    void onArtistClicked(QListWidgetItem *item);
     void togglePlayPause();
     void playNext();
     void playPrevious();
@@ -45,10 +52,20 @@ private slots:
     void updatePosition(qint64 position);
     void updateDuration(qint64 duration);
     void setPosition(int position);
+    void openNowPlayingWindow();
 private:
     int currentUserId;
+    int currentTrackId;
     bool isShuffle;
     int repeatState;
+    int customRepeatN;
+    int customRepeatStartRow;
+    int previousPageIndex;
+    int currentLyricIndex;
+
+    QLabel *nowPlayingTimeLabel;
+    QListWidget *currentPlayingList;
+    QSet<int> likedTrackIds;
     QLineEdit *usernameInput;
     QPushButton *btnLogin;
     QLabel *currentUserLabel;
@@ -60,6 +77,11 @@ private:
     QListWidget *artistList;
     QListWidget *followedArtistList;
     QListWidget *searchList;
+    QWidget *artistProfilePage;
+    QLabel *artistProfileNameLabel;
+    QLabel *artistProfileImageLabel;
+    QListWidget *artistProfileTrackList;
+    QPushButton *btnBackFromProfile;
     QPushButton *btnFollowing;
     QPushButton *btnLikeRecs;
     QPushButton *btnRemoveLike;
@@ -74,6 +96,7 @@ private:
     QPushButton *btnPlayPause;
     QPushButton *btnNext;
     QPushButton *btnRepeat;
+    QPushButton *btnLikePlaying;
     QSlider *volumeSlider;
     QSlider *progressSlider;
     QLabel *timeLabel;
@@ -81,9 +104,30 @@ private:
     QNetworkAccessManager *imageManager;
     QMediaPlayer *player;
     QAudioOutput *audioOutput;
+    QString currentCoverUrl;
+    QString currentLyrics;
+    QWidget *playerBarWidget;
+    QWidget *nowPlayingPage;
+    QPushButton *btnBackFromNowPlaying;
+    QLabel *nowPlayingCoverLabel;
+    QLabel *nowPlayingTitleLabel;
+    QLabel *nowPlayingArtistLabel;
+    QListWidget *lyricsListWidget;
+    QSlider *nowPlayingSlider;
+    QLabel *nowPlayingCurrentTime;
+    QLabel *nowPlayingTotalTime;
+    QPushButton *btnNowPlayingLike;
+    QPushButton *btnNowPlayingShuffle;
+    QPushButton *btnNowPlayingPrev;
+    QPushButton *btnNowPlayingPlayPause;
+    QPushButton *btnNowPlayingNext;
+    QPushButton *btnNowPlayingRepeat;
     QListWidget* getActiveTrackList();
     void loadCircularImage(const QString &urlString, QListWidgetItem *item);
     void loadSquareImage(const QString &urlString, QLabel *label);
+    void loadSquareIcon(const QString &urlString, QListWidgetItem *item);
+    void addTrackItem(QListWidget *list, const QJsonObject &obj);
+    bool eventFilter(QObject *watched, QEvent *event) override;
 };
 
 #endif
