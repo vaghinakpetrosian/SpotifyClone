@@ -11,7 +11,7 @@ A high-performance music streaming desktop application built with **C++ 17** and
 * **Recommendation System:** Backend integration for "My Vibe" suggestions.
 * **Advanced Audio Controls:** Support for shuffle, repeat-one, and custom N-track sequence looping.
 
-##  Tech Stack
+## Tech Stack
 
 **Frontend:**
 * **C++ 17:** Core application logic and memory management.
