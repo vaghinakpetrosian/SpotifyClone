@@ -1,7 +1,6 @@
 import json
 import random
 
-# Your requested artists, including famous duets and collaborations!
 new_artists_data = {
     "Taylor Swift": {
         "genre": "Pop",
@@ -84,7 +83,6 @@ for artist, info in new_artists_data.items():
     for album, tracks in info["albums"].items():
         for track in tracks:
             
-            # Extra string replacements to handle "feat" and parentheses cleanly
             safe_track = track.lower().replace(" ", "_").replace("?", "").replace("'", "").replace("(", "").replace(")", "")
             safe_artist = artist.lower().replace(" ", "_").replace("5", "five_")
             safe_album = album.lower().replace(" ", "_").replace("'", "")
